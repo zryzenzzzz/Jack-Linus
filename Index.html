@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Minimal App Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: white;
+        background-image: radial-gradient(#ccc 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+    header {
+        text-align: center;
+        padding: 30px 0 20px 0;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    .container {
+        height: calc(100% - 100px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    .box {
+        width: 250px; /* slightly bigger so footer text breathes */
+        height: 250px;
+        background-color: white;
+        border-radius: 45px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        position: relative;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .info-row {
+        position: absolute;
+        bottom: 55px; /* extra space for bigger footer */
+        left: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        pointer-events: none;
+    }
+    .label {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(0,0,0,0.85);
+    }
+    .price {
+        font-size: 15px;
+        font-weight: 600;
+        color: rgba(0,0,0,0.7);
+    }
+    /* Footer split design */
+    .box-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+        padding: 12px 18px;
+        font-size: 15px;
+        font-weight: 500;
+        border-bottom-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+    }
+    .buy-text {
+        cursor: pointer;
+    }
+    .view-details {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+    /* Expanded white box overlay */
+    .expanded {
+        position: fixed !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+        width: 80% !important;
+        height: 80% !important;
+        z-index: 999;
+        border-radius: 20px !important;
+        background-color: white !important; /* ensure it's plain white */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+<body>
+
+<header>MATHERSHED</header>
+
+<div class="container" id="product-container">
+    <div class="box">
+        <div class="info-row">
+            <span class="label">Shed 1</span>
+            <span class="price">$40</span>
+        </div>
+        <div class="box-footer">
+            <span class="buy-text">Buy Now</span>
+            <span class="view-details">View Details</span>
+        </div>
+    </div>
+    <div class="box">
+        <div class="info-row">
+            <span class="label">Shed 2</span>
+            <span class="price">$150</span>
+        </div>
+        <div class="box-footer">
+            <span class="buy-text">Buy Now</span>
+            <span class="view-details">View Details</span>
+        </div>
+    </div>
+    <div class="box">
+        <div class="info-row">
+            <span class="label">Shed 3</span>
+            <span class="price">$200</span>
+        </div>
+        <div class="box-footer">
+            <span class="buy-text">Buy Now</span>
+            <span class="view-details">View Details</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    const boxes = document.querySelectorAll('.box');
+    const viewButtons = document.querySelectorAll('.view-details');
+    let expandedBox = null;
+
+    viewButtons.forEach((btn, index) => {
+        btn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from reaching outside handler
+            if (expandedBox) {
+                expandedBox.classList.remove('expanded');
+                expandedBox = null;
+            } else {
+                expandedBox = boxes[index];
+                expandedBox.classList.add('expanded');
+                document.addEventListener('click', closeOnClickOutside);
+            }
+        });
+    });
+
+    function closeOnClickOutside(e) {
+        if (expandedBox && !expandedBox.contains(e.target) && !e.target.classList.contains('view-details')) {
+            expandedBox.classList.remove('expanded');
+            expandedBox = null;
+            document.removeEventListener('click', closeOnClickOutside);
+        }
+    }
+</script>
+
+</body>
+</html>
