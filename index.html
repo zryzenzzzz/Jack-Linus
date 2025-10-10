@@ -1,649 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mathershed — Premium Sheds | mathershed.com</title>
-  <meta name="description" content="Mathershed builds and delivers premium sheds. Free local delivery, 10-year warranty, custom options, and easy financing. Shop our best-selling sheds." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jack & Linus — Law Firm | JackLinus.com</title>
+  <meta name="description" content="Jack & Linus is a boutique law firm providing precise, client-focused counsel. Explore our practice areas and schedule a consultation." />
+  <link rel="canonical" href="https://jacklinus.com/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jack & Linus — Law Firm" />
+  <meta property="og:site_name" content="Jack & Linus" />
+  <meta property="og:url" content="https://jacklinus.com/" />
+  <meta property="og:description" content="Black-and-white, Cinzel-typographic website for Jack & Linus. Explore practice areas and contact us for a consultation." />
+
+  <!-- Favicon (black-and-white SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Cinzel,serif' font-size='120' fill='%23fff'%3EJ%3C/text%3E%3Ctext x='50%25' y='82%25' text-anchor='middle' dominant-baseline='middle' font-family='Cinzel,serif' font-size='100' fill='%23fff'%3EL%3C/text%3E%3C/svg%3E" />
+
+  <!-- Font: Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
   <style>
-    :root{
-      --bg:#f7faf7;
-      --card:#ffffff;
-      --ink:#0f172a;
-      --muted:#475569;
-      --brand:#14532d;
-      --brand-600:#166534;
-      --accent:#f97316;
-      --ring:rgba(20,83,45,.25);
-      --shadow:0 10px 25px rgba(2,6,23,.08), 0 2px 8px rgba(2,6,23,.06);
-      --radius:14px;
+    /* Reset & base */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    :root { --black:#000; --white:#fff; }
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--white);
+      font-family: "Cinzel", serif;
+      line-height: 1.35;
+      font-size: 18px;
+      letter-spacing: .02em;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui,ui-sans-serif,Segoe UI,Roboto,Arial;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      scroll-behavior:smooth;
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px dashed currentColor; outline-offset: 2px;
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block;border-radius:12px}
-    .container{width:min(1200px,92%);margin-inline:auto}
+    .container { width: min(1200px, 92%); margin: 0 auto; }
 
-    /* Header */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.86);
-      backdrop-filter:saturate(1.5) blur(10px);
-      border-bottom:1px solid rgba(2,6,23,.06);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0;
-    }
-    .brand{
-      display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.2rem;
-      letter-spacing:.2px;
-    }
-    .brand .logo{
-      width:38px;height:38px;border-radius:10px;
-      background:conic-gradient(from 210deg at 50% 50%, #1a6948, #0f3d2e 55%, #238062 70%, #1a6948);
-      box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
-      position:relative;overflow:hidden;
-    }
-    .brand .logo:after{
-      content:"";position:absolute;inset:20% 22% 15% 22%;
-      background:
-        radial-gradient(140px 60px at 50% 80%,rgba(255,255,255,.15),transparent 60%),
-        linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.05));
-      border-radius:6px;
-    }
-    .brand span strong{color:var(--brand)}
-    nav .links{display:flex;gap:20px;align-items:center}
-    nav .links a{
-      color:var(--muted);font-weight:600;font-size:.94rem;opacity:.9;
-      padding:8px 10px;border-radius:10px;transition:all .2s ease;
-    }
-    nav .links a:hover{background:rgba(20,83,45,.08);color:var(--brand-600)}
-    .cta{
-      display:flex;gap:10px;align-items:center
-    }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      border-radius:12px;border:1px solid transparent;
-      padding:12px 16px;font-weight:700;font-size:.95rem;cursor:pointer;
-      transition:all .2s ease;box-shadow:var(--shadow);text-align:center;
-      white-space:nowrap;
-    }
-    .btn.primary{background:var(--brand);color:white}
-    .btn.primary:hover{background:#0f4d36}
-    .btn.outline{background:white;border-color:rgba(2,6,23,.12);color:var(--ink);box-shadow:none}
-    .btn.outline:hover{border-color:rgba(2,6,23,.2);transform:translateY(-1px)}
+    /* Utility */
+    .simple { font-family: Arial, Helvetica, sans-serif; letter-spacing: normal; }
 
-    /* Mobile menu (CSS-only) */
-    #nav-toggle{display:none}
-    .hamburger{display:none;gap:8px;align-items:center}
-    .hamburger button{
-      border:none;background:transparent;cursor:pointer;border-radius:10px;padding:8px;
+    /* Header / Nav */
+    .skip { position: absolute; left: -9999px; top: auto; }
+    .skip:focus { left: 12px; top: 12px; background: var(--white); color: var(--black); padding: 8px 12px; border: 1px solid var(--black); z-index: 9999; }
+
+    header {
+      position: sticky; top: 0; z-index: 999;
+      background: var(--white);
+      border-bottom: 1px solid var(--black);
     }
-    .hamburger svg{width:28px;height:28px}
-    @media (max-width: 900px){
-      nav .links{display:none}
-      #nav-toggle:checked ~ .links{display:flex;flex-direction:column;gap:10px;padding:12px;background:white;border:1px solid rgba(2,6,23,.08);border-radius:12px;position:absolute;top:64px;left:4%;right:4%;box-shadow:var(--shadow)}
-      .hamburger{display:flex}
-      .cta .btn.outline{display:none}
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .brand a { font-weight: 900; font-size: 24px; letter-spacing: .06em; text-transform: uppercase; }
+    .brand small { font-weight: 400; font-size: 12px; letter-spacing: .2em; display: block; }
+    .menu { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .menu a { text-transform: uppercase; font-weight: 700; letter-spacing: .08em; font-size: 14px; }
+    .menu a:hover { text-decoration: underline; }
+
+    .hamburger { display: none; background: transparent; border: 1px solid var(--black); width: 42px; height: 42px; align-items: center; justify-content: center; }
+    .hamburger span { width: 22px; height: 2px; background: var(--black); display: block; position: relative; }
+    .hamburger span::before, .hamburger span::after {
+      content: ""; position: absolute; left: 0; width: 22px; height: 2px; background: var(--black);
+    }
+    .hamburger span::before { top: -7px; }
+    .hamburger span::after { top: 7px; }
+
+    @media (max-width: 880px) {
+      .hamburger { display: inline-flex; }
+      .menu {
+        position: fixed; inset: 64px 0 auto 0; background: var(--white);
+        border-bottom: 1px solid var(--black);
+        transform: translateY(-120%); transition: transform .2s ease-in-out;
+        padding: 16px; gap: 16px; flex-direction: column;
+      }
+      .menu.open { transform: translateY(0); }
     }
 
     /* Hero */
-    .hero{
-      position:relative;isolation:isolate;overflow:hidden;
-      background:
-        linear-gradient(180deg, rgba(20,83,45,.18), rgba(20,83,45,0)),
-        url('https://source.unsplash.com/1600x900/?shed,backyard') center/cover no-repeat;
-      color:#0a1a13;
-      border-bottom:1px solid rgba(2,6,23,.06);
+    .hero { background: var(--black); color: var(--white); padding: 120px 0 96px; }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(44px, 9vw, 108px);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: .04em;
     }
-    .hero:after{
-      content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(247,250,247,.95));
-      z-index:-1;
-    }
-    .hero-inner{
-      padding:70px 0 40px;
-      display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;
-    }
-    .hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:6px 0 12px}
-    .kicker{color:var(--brand);font-weight:800;letter-spacing:.4px;text-transform:uppercase;font-size:.82rem}
-    .hero p{color:#0f172a;opacity:.9;max-width:60ch}
-    .hero .actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-    .hero-card{
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(2,6,23,.08);
-      border-radius:16px;padding:18px;box-shadow:var(--shadow)
-    }
-    .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
-    .badge{
-      background:white;border:1px solid rgba(2,6,23,.08);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;justify-content:center;font-weight:700;color:#0f2a1b
-    }
-    .badge span{font-size:1.2rem}
-    @media (max-width: 900px){
-      .hero-inner{grid-template-columns:1fr;gap:18px;padding:38px 0 10px}
-      .badges{grid-template-columns:repeat(2,1fr)}
-    }
+    .hero p { margin: 0; font-size: clamp(16px, 2.6vw, 22px); max-width: 42ch; }
+    .hero .cta { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
 
-    /* Products */
-    .section{padding:48px 0}
-    .section h2{font-size:clamp(1.6rem,2.4vw,2.1rem);margin:0 0 8px}
-    .muted{color:var(--muted)}
-    .grid{
-      display:grid;gap:18px;
-      grid-template-columns:repeat(12,1fr)
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 20px; border: 1px solid currentColor; background: transparent; color: inherit;
+      text-transform: uppercase; letter-spacing: .08em; font-weight: 700; cursor: pointer;
     }
-    .span-12{grid-column:span 12}
-    .span-6{grid-column:span 6}
-    .span-4{grid-column:span 4}
-    .span-3{grid-column:span 3}
-    @media (max-width: 1100px){
-      .span-3{grid-column:span 4}
-    }
-    @media (max-width: 800px){
-      .span-6,.span-4,.span-3{grid-column:span 12}
-    }
+    .btn.invert { background: var(--white); color: var(--black); border-color: var(--white); }
+    .btn:hover { transform: translateY(-2px); }
 
-    .card{
-      background:var(--card);border:1px solid rgba(2,6,23,.08);
-      border-radius:var(--radius);box-shadow:var(--shadow);
-      overflow:hidden;display:flex;flex-direction:column
-    }
-    .card .media{position:relative}
-    .price-chip{
-      position:absolute;bottom:12px;left:12px;
-      background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
-      color:#0f172a;border-radius:999px;padding:8px 12px;font-weight:800;
-      border:1px solid rgba(2,6,23,.12)
-    }
-    .card .body{padding:14px 16px}
-    .card h3{margin:4px 0 4px;font-size:1.15rem}
-    .meta{display:flex;gap:10px;color:var(--muted);font-size:.92rem}
-    .specs{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
-    .chip{
-      background:#f0f7f3;border:1px solid rgba(20,83,45,.18);
-      color:#14532d;border-radius:999px;padding:6px 10px;font-weight:700;font-size:.82rem
-    }
-    .actions-row{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
-    details summary{
-      cursor:pointer;margin-top:6px;font-weight:700;color:var(--brand);
-      list-style:none
-    }
-    details summary::-webkit-details-marker{display:none}
-    details .more{color:var(--muted);margin-top:6px}
+    /* Sections */
+    section { padding: 96px 0; }
+    .section-title { margin: 0 0 10px; font-size: clamp(28px, 5.2vw, 52px); line-height: 1; text-transform: uppercase; letter-spacing: .06em; }
+    .section-lead { margin: 0 0 28px; max-width: 62ch; }
+    .dark { background: var(--black); color: var(--white); }
+    .rule { border: 0; border-top: 1px solid currentColor; margin: 28px 0; }
 
-    /* Compare strip */
-    .compare{
-      background:linear-gradient(180deg,#ffffff,#f3f7f3);
-      border:1px solid rgba(2,6,23,.08);
-      border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:var(--shadow)
-    }
-    .compare .item{display:flex;align-items:center;gap:8px}
-    .compare .dot{width:10px;height:10px;border-radius:999px;background:var(--brand)}
+    /* Grids */
+    .grid { display: grid; gap: 24px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 980px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 680px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
 
-    /* Custom build section */
-    .custom{
-      background:linear-gradient(180deg,#0f3d2e 0%, #14532d 50%, #0f3d2e 100%);
-      color:white;border-radius:16px;padding:22px;box-shadow:var(--shadow)
+    /* Cards */
+    .card {
+      border: 1px solid currentColor; padding: 22px; background: transparent;
     }
-    .custom form{
-      display:grid;gap:10px;grid-template-columns:repeat(12,1fr)
-    }
-    .field{grid-column:span 6}
-    .field-full{grid-column:span 12}
-    .field label{font-size:.88rem;font-weight:700;opacity:.9}
-    .field input,.field select,.field textarea{
-      width:100%;margin-top:6px;border:1px solid rgba(255,255,255,.3);
-      background:rgba(255,255,255,.06);color:white;padding:12px 12px;border-radius:12px;
-      outline:none
-    }
-    .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.8)}
-    .field textarea{min-height:90px;resize:vertical}
-    .note{font-size:.86rem;opacity:.85}
+    .card h3 { margin: 0 0 8px; font-size: 22px; text-transform: uppercase; letter-spacing: .06em; }
+    .card p { margin: 0; }
 
-    /* Testimonials */
-    .testi{
-      display:grid;gap:16px;grid-template-columns:repeat(12,1fr)
+    /* Attorneys */
+    .person { display: grid; grid-template-columns: 140px 1fr; gap: 20px; align-items: center; }
+    .avatar {
+      width: 140px; aspect-ratio: 1/1; border: 1px solid currentColor; display: grid; place-items: center;
+      font-size: 46px; font-weight: 900; background: var(--white); color: var(--black);
     }
-    .quote{
-      grid-column:span 4;background:white;border:1px solid rgba(2,6,23,.08);
-      border-radius:16px;padding:16px;box-shadow:var(--shadow)
-    }
-    .stars{color:#f59e0b}
-    @media (max-width:900px){
-      .quote{grid-column:span 12}
-    }
+    .dark .avatar { background: var(--black); color: var(--white); }
+    .person h4 { margin: 0 0 6px; font-size: 20px; text-transform: uppercase; letter-spacing: .06em; }
+    .person small { display: block; margin-bottom: 8px; }
 
-    /* FAQ */
-    .faq details{
-      background:white;border:1px solid rgba(2,6,23,.08);border-radius:12px;
-      padding:12px 14px;box-shadow:var(--shadow)
+    /* Contact */
+    form { display: grid; gap: 14px; }
+    label { font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; }
+    input, textarea {
+      width: 100%; padding: 12px 12px; border: 1px solid currentColor; background: transparent; color: inherit;
+      font: inherit; letter-spacing: .02em;
     }
-    .faq details+details{margin-top:10px}
+    textarea { min-height: 140px; resize: vertical; }
+    .form-row { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 680px) { .form-row { grid-template-columns: 1fr; } }
+    .muted { opacity: .8; }
+    .status { margin-top: 10px; min-height: 22px; }
 
     /* Footer */
-    footer{
-      margin-top:32px;background:#0b1d15;color:#e7f1ec;border-top:1px solid rgba(255,255,255,.08)
-    }
-    .footer-grid{
-      display:grid;gap:18px;grid-template-columns:repeat(12,1fr);padding:24px 0
-    }
-    .foot-col{grid-column:span 4}
-    .foot-col ul{list-style:none;padding:0;margin:6px 0}
-    .foot-col li{margin:8px 0}
-    .copyright{
-      border-top:1px solid rgba(255,255,255,.08);
-      padding:12px 0;color:#b9d2c7;font-size:.9rem
-    }
-    @media (max-width:900px){
-      .foot-col{grid-column:span 12}
-    }
-
-    /* Helpers */
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      background:#fff;border:1px solid rgba(2,6,23,.08);border-radius:999px;
-      padding:8px 12px;font-weight:700;color:#0f2a1b
-    }
-    .highlight{color:var(--brand)}
-    .subtle{color:var(--muted)}
-    .ring:focus{outline:4px solid var(--ring);outline-offset:2px}
-
-    /* Sticky mobile call bar */
-    .callbar{
-      position:fixed;bottom:14px;right:14px;z-index:40;
-    }
-    .callbar a{
-      background:var(--accent);color:white;border-radius:999px;padding:12px 16px;
-      box-shadow:var(--shadow);font-weight:800;display:flex;gap:8px;align-items:center
-    }
-    @media (min-width:800px){ .callbar{display:none} }
+    footer { background: var(--black); color: var(--white); padding: 36px 0; border-top: 1px solid var(--white); }
+    .foot { display: grid; gap: 14px; align-items: center; grid-template-columns: 1fr auto; }
+    .foot small { letter-spacing: .06em; }
+    .links { display: flex; gap: 16px; }
+    .links a { text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
   </style>
 </head>
 <body>
-  <a href="#main" class="pill" style="position:absolute;left:-9999px;top:auto">Skip to content</a>
 
-  <header>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header aria-label="Primary">
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span aria-label="Mathershed logo and wordmark">
-          <strong>Mathershed</strong> <span class="subtle">Sheds</span>
-        </span>
+        <a href="https://jacklinus.com/">Jack &amp; Linus</a>
+        <small>Law Firm</small>
       </div>
-
-      <label class="hamburger" for="nav-toggle" aria-label="Open menu">
-        <button class="ring" aria-label="Menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <nav>
+        <button class="hamburger" aria-label="Toggle menu" aria-controls="menu" aria-expanded="false">
+          <span></span>
         </button>
-      </label>
-      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
-
-      <nav class="links">
-        <a href="inventory/">Inventory</a>
-        <a href="#shop">Shop sheds</a>
-        <a href="#custom">Custom builds</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <ul id="menu" class="menu" role="menubar">
+          <li role="none"><a role="menuitem" href="#practice">Practice</a></li>
+          <li role="none"><a role="menuitem" href="#attorneys">Attorneys</a></li>
+          <li role="none"><a role="menuitem" href="#approach">Approach</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+        </ul>
       </nav>
-
-      <div class="cta">
-        <a class="btn outline" href="tel:+1-555-0123" aria-label="Call Mathershed">Call: (555) 0123</a>
-        <a class="btn primary" href="#shop">Shop now</a>
-      </div>
     </div>
   </header>
 
-  <main id="main">
+  <main id="content">
     <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <div class="kicker">mathershed.com</div>
-          <h1>Built-to-last sheds. Smart prices. Free local delivery.</h1>
-          <p>
-            From compact garden sheds to full workshop garages, Mathershed crafts durable spaces with premium lumber, galvanized hardware, and weatherproof finishes. Backed by a 10-year warranty.
-          </p>
-          <div class="actions">
-            <a class="btn primary" href="#shop">Shop best sellers</a>
-            <a class="btn outline" href="inventory/">View inventory</a>
-            <a class="btn outline" href="#custom">Design your shed</a>
-          </div>
-          <div class="badges" role="list" aria-label="Key benefits">
-            <div class="badge"><span>🚚</span> Free delivery 30mi</div>
-            <div class="badge"><span>🛡️</span> 10-year warranty</div>
-            <div class="badge"><span>🔧</span> Built on-site</div>
-            <div class="badge"><span>💳</span> Financing available</div>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="compare">
-            <div class="item"><span class="dot"></span> Pressure-treated base</div>
-            <div class="item"><span class="dot"></span> 30-year shingles</div>
-            <div class="item"><span class="dot"></span> Lifetime floor joists</div>
-          </div>
-          <div style="display:flex;gap:12px;margin-top:12px">
-            <div class="pill">Lead time: 2–3 weeks</div>
-            <div class="pill">Install: 1 day</div>
-          </div>
-          <p class="subtle" style="margin-top:10px">Prefer to talk? Call us at <a href="tel:+1-555-0123" class="highlight">(555) 0123</a>.</p>
+    <section class="hero" aria-label="Hero">
+      <div class="container">
+        <h1>Jack &amp; Linus</h1>
+        <p class="simple">JackLinus.com</p>
+        <div class="cta">
+          <a class="btn invert" href="#contact">Schedule a Consultation</a>
+          <a class="btn" href="#practice">Explore Practice Areas</a>
         </div>
       </div>
     </section>
 
-    <!-- Products -->
-    <section id="shop" class="section container">
-      <h2>Best‑selling sheds</h2>
-      <p class="muted">High-quality construction with transparent pricing. Photos are examples; your shed is built to order.</p>
-
-      <div class="grid" style="margin-top:16px">
-        <!-- Product 1 -->
-        <article class="card span-3">
-          <div class="media">
-            <img loading="lazy" src="https://source.unsplash.com/800x600/?garden,shed" alt="8x10 Garden Shed with gable roof in a backyard" />
-            <div class="price-chip">$1,399</div>
-          </div>
-          <div class="body">
-            <h3>8×10 Garden Shed</h3>
-            <div class="meta"><span>80 sq ft</span> • <span>Gable roof</span></div>
-            <div class="specs">
-              <span class="chip">LP® SmartSide</span>
-              <span class="chip">30‑yr shingles</span>
-              <span class="chip">2 windows</span>
-            </div>
-            <div class="actions-row">
-              <a class="btn primary" href="#contact">Get this shed</a>
-              <a class="btn outline" href="#faq">See specs</a>
-            </div>
-            <details>
-              <summary>More details</summary>
-              <div class="more">Pressure‑treated base, 16" OC framing, choice of colors. As low as $64/mo with approved credit.</div>
-            </details>
-          </div>
-        </article>
-
-        <!-- Product 2 -->
-        <article class="card span-3">
-          <div class="media">
-            <img loading="lazy" src="https://source.unsplash.com/800x600/?shed,wood" alt="10x12 Classic Gable shed painted sage green" />
-            <div class="price-chip">$1,999</div>
-          </div>
-          <div class="body">
-            <h3>10×12 Classic Gable</h3>
-            <div class="meta"><span>120 sq ft</span> • <span>Best value</span></div>
-            <div class="specs">
-              <span class="chip">Ridge vent</span>
-              <span class="chip">Heavy hinges</span>
-              <span class="chip">Double doors</span>
-            </div>
-            <div class="actions-row">
-              <a class="btn primary" href="#contact">Reserve</a>
-              <a class="btn outline" href="#faq">See specs</a>
-            </div>
-            <details>
-              <summary>More details</summary>
-              <div class="more">8' walls, 3/4" tongue & groove floor, paint/stain options. From $89/mo.</div>
-            </details>
-          </div>
-        </article>
-
-        <!-- Product 3 -->
-        <article class="card span-3">
-          <div class="media">
-            <img loading="lazy" src="https://source.unsplash.com/800x600/?barn,shed" alt="10x16 Lofted Barn with double loft storage" />
-            <div class="price-chip">$2,599</div>
-          </div>
-          <div class="body">
-            <h3>10×16 Lofted Barn</h3>
-            <div class="meta"><span>160 sq ft</span> • <span>Extra storage</span></div>
-            <div class="specs">
-              <span class="chip">Loft front/back</span>
-              <span class="chip">Transom doors</span>
-              <span class="chip">3 windows</span>
-            </div>
-            <div class="actions-row">
-              <a class="btn primary" href="#contact">Reserve</a>
-              <a class="btn outline" href="#faq">See specs</a>
-            </div>
-            <details>
-              <summary>More details</summary>
-              <div class="more">High barn roof maximizes overhead storage. Optional ramps and shelving.</div>
-            </details>
-          </div>
-        </article>
-
-        <!-- Product 4 -->
-        <article class="card span-3">
-          <div class="media">
-            <img loading="lazy" src="https://source.unsplash.com/800x600/?workshop,shed" alt="12x20 Workshop shed with windowed doors" />
-            <div class="price-chip">$3,999</div>
-          </div>
-          <div class="body">
-            <h3>12×20 Workshop</h3>
-            <div class="meta"><span>240 sq ft</span> • <span>Pro setup</span></div>
-            <div class="specs">
-              <span class="chip">8'6" walls</span>
-              <span class="chip">3 windows</span>
-              <span class="chip">Workbench</span>
-            </div>
-            <div class="actions-row">
-              <a class="btn primary" href="#contact">Reserve</a>
-              <a class="btn outline" href="#faq">See specs</a>
-            </div>
-            <details>
-              <summary>More details</summary>
-              <div class="more">Insulation ready, upgraded floor joists, optional electrical package.</div>
-            </details>
-          </div>
-        </article>
-
-        <!-- Product 5 -->
-        <article class="card span-3">
-          <div class="media">
-            <img loading="lazy" src="https://source.unsplash.com/800x600/?garage,shed" alt="12x24 Garage Shed with roll-up door" />
-            <div class="price-chip">$4,799</div>
-          </div>
-          <div class="body">
-            <h3>12×24 Garage Shed</h3>
-            <div class="meta"><span>288 sq ft</span> • <span>Roll‑up door</span></div>
-            <div class="specs">
-              <span class="chip">9' door</span>
-              <span class="chip">Ramps</span>
-              <span class="chip">Heavy floor</span>
-            </div>
-            <div class="actions-row">
-              <a class="btn primary" href="#contact">Reserve</a>
-              <a class="btn outline" href="#faq">See specs</a>
-            </div>
-            <details>
-              <summary>More details</summary>
-              <div class="more">12" OC floor, 3/4" floor deck, tie‑down anchors. Perfect for ATVs or mowers.</div>
-            </details>
-          </div>
-        </article>
-
-        <!-- Product 6 -->
-        <article class="card span-3">
-          <div class="media">
-            <img loading="lazy" src="https://source.unsplash.com/800x600/?modern,shed" alt="8x12 Modern Studio with horizontal siding" />
-            <div class="price-chip">$2,499</div>
-          </div>
-          <div class="body">
-            <h3>8×12 Modern Studio</h3>
-            <div class="meta"><span>96 sq ft</span> • <span>Clean lines</span></div>
-            <div class="specs">
-              <span class="chip">Metal roof</span>
-              <span class="chip">Clerestory</span>
-              <span class="chip">Insul‑ready</span>
-            </div>
-            <div class="actions-row">
-              <a class="btn primary" href="#contact">Reserve</a>
-              <a class="btn outline" href="#faq">See specs</a>
-            </div>
-            <details>
-              <summary>More details</summary>
-              <div class="more">Ideal for offices or studios. Add tempered glass package and mini‑split prep.</div>
-            </details>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Custom builds -->
-    <section id="custom" class="section container">
-      <div class="custom">
-        <div class="grid" style="align-items:center">
-          <div class="span-6">
-            <h2>Custom builds and upgrades</h2>
-            <p>Pick your size, siding, color, windows, doors, and interior options. We’ll deliver and install on a level site.</p>
-            <ul>
-              <li>Ramp, shelving, lofts, and electrical packages</li>
-              <li>Metal or shingle roofs in multiple colors</li>
-              <li>Roll‑up, carriage, or French doors</li>
-            </ul>
-            <p class="note">Submit a quick quote request — we respond same day.</p>
-          </div>
-          <div class="span-6">
-            <form method="post" action="mailto:sales@mathershed.com" enctype="text/plain">
-              <div class="field"><label for="name">Name</label><input id="name" name="Name" placeholder="Your full name" required class="ring"></div>
-              <div class="field"><label for="email">Email</label><input id="email" type="email" name="Email" placeholder="you@example.com" required class="ring"></div>
-              <div class="field"><label for="phone">Phone</label><input id="phone" name="Phone" placeholder="(555) 0123" class="ring"></div>
-              <div class="field"><label for="size">Preferred size</label>
-                <select id="size" name="Size" class="ring">
-                  <option>8×10</option><option>10×12</option><option>10×16</option><option>12×20</option><option>12×24</option><option>Other</option>
-                </select>
-              </div>
-              <div class="field-full"><label for="notes">Notes</label><textarea id="notes" name="Notes" placeholder="Tell us about your site, colors, and options…" class="ring"></textarea></div>
-              <div class="field-full">
-                <button class="btn primary" type="submit">Request quote</button>
-                <span class="note" style="margin-left:8px">or call <a href="tel:+1-555-0123" class="highlight">(555) 0123</a></span>
-              </div>
-            </form>
-          </div>
+    <!-- Practice Areas -->
+    <section id="practice" aria-labelledby="practice-title">
+      <div class="container">
+        <h2 class="section-title" id="practice-title">Practice Areas</h2>
+        <p class="section-lead">Focused practice built on rigorous preparation and measured strategy.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Business &amp; Corporate</h3>
+            <p>Entity formation, contracts, governance, and transactions with clarity from term sheet to closing.</p>
+          </article>
+          <article class="card">
+            <h3>Litigation &amp; Disputes</h3>
+            <p>Strategic advocacy in commercial disputes, injunctions, and alternative dispute resolution.</p>
+          </article>
+          <article class="card">
+            <h3>Real Estate</h3>
+            <p>Acquisitions, leasing, and development with careful attention to risk and timelines.</p>
+          </article>
+          <article class="card">
+            <h3>Employment</h3>
+            <p>Policies, agreements, compliance, and dispute resolution for employers and executives.</p>
+          </article>
+          <article class="card">
+            <h3>Intellectual Property</h3>
+            <p>Protection and enforcement of trademarks, copyrights, and licensing arrangements.</p>
+          </article>
+          <article class="card">
+            <h3>Private Client</h3>
+            <p>Estate planning, trusts, and fiduciary guidance tailored to family and business objectives.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section container">
-      <h2>Loved by homeowners</h2>
-      <div class="testi" style="margin-top:12px">
-        <blockquote class="quote">
-          <div class="stars">★★★★★</div>
-          “Install took half a day and the crew was awesome. The 10×16 lofted barn gave us back our garage.”
-          <div class="subtle" style="margin-top:6px">— Jamie R.</div>
-        </blockquote>
-        <blockquote class="quote">
-          <div class="stars">★★★★★</div>
-          “Best price for the quality. Paint and hardware are top notch. Free delivery was a bonus.”
-          <div class="subtle" style="margin-top:6px">— Craig D.</div>
-        </blockquote>
-        <blockquote class="quote">
-          <div class="stars">★★★★★</div>
-          “We customized windows and doors for a studio look. Exactly what we wanted.”
-          <div class="subtle" style="margin-top:6px">— Priya S.</div>
-        </blockquote>
+    <!-- Attorneys -->
+    <section id="attorneys" class="dark" aria-labelledby="attorneys-title">
+      <div class="container">
+        <h2 class="section-title" id="attorneys-title">Attorneys</h2>
+        <p class="section-lead">Direct access to partners. Clear communication at every step.</p>
+        <div class="grid grid-2">
+          <article class="card person">
+            <div class="avatar" aria-hidden="true">J</div>
+            <div>
+              <h4>Jack</h4>
+              <small class="muted">Partner</small>
+              <p>Focuses on corporate transactions and complex commercial disputes with a pragmatic, outcome‑oriented approach.</p>
+            </div>
+          </article>
+          <article class="card person">
+            <div class="avatar" aria-hidden="true">L</div>
+            <div>
+              <h4>Linus</h4>
+              <small class="muted">Partner</small>
+              <p>Advises on real estate, employment, and private client matters with meticulous attention to risk and detail.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section container">
-      <h2>FAQ</h2>
-      <div class="faq" style="margin-top:10px">
-        <details open>
-          <summary>What areas do you deliver to?</summary>
-          <div>Free delivery within 30 miles of our yard; small mileage fee after that. We set your shed on concrete blocks or your prepared pad.</div>
-        </details>
-        <details>
-          <summary>What foundation do I need?</summary>
-          <div>Level ground is essential. We recommend a compacted gravel pad or concrete. We can level within 4" using pressure‑treated shims.</div>
-        </details>
-        <details>
-          <summary>What’s the lead time?</summary>
-          <div>Typical lead time is 2–3 weeks. Installation takes about one day depending on size and site access.</div>
-        </details>
-        <details>
-          <summary>Do you offer financing?</summary>
-          <div>Yes — with approved credit, payments can be as low as $64/mo on smaller models. Ask us for details.</div>
-        </details>
+    <!-- Approach / Values -->
+    <section id="approach" aria-labelledby="approach-title">
+      <div class="container">
+        <h2 class="section-title" id="approach-title">Our Approach</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Precision</h3>
+            <p>Every matter receives rigorous analysis, disciplined drafting, and clear next steps.</p>
+          </article>
+          <article class="card">
+            <h3>Advocacy</h3>
+            <p>We position clients for leverage—whether across the table or in the courtroom.</p>
+          </article>
+          <article class="card">
+            <h3>Integrity</h3>
+            <p>Direct advice, transparent scope, and work product that stands on its own.</p>
+          </article>
+        </div>
+        <hr class="rule" />
+        <p class="muted">Attorney Advertising. Prior results do not guarantee a similar outcome. Use of this site does not create an attorney–client relationship.</p>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section container">
-      <h2>Contact Mathershed</h2>
-      <p class="muted">Questions or ready to order? We’re here to help.</p>
-      <div class="grid" style="margin-top:10px">
-        <div class="card span-6" style="padding:16px">
-          <h3>Call or email</h3>
-          <p>
-            Phone: <a class="highlight" href="tel:+1-555-0123">(555) 0123</a><br/>
-            Email: <a class="highlight" href="mailto:sales@mathershed.com">sales@mathershed.com</a>
-          </p>
-          <p>Hours: Mon–Sat 8am–6pm</p>
-          <div class="specs">
-            <span class="chip">Free estimates</span>
-            <span class="chip">Licensed & insured</span>
-            <span class="chip">Local crew</span>
+    <section id="contact" class="dark" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Contact</h2>
+        <p class="section-lead">Tell us about your matter. We will follow up to coordinate a consultation.</p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div>
+                  <label for="first">First Name</label>
+                  <input id="first" name="first" type="text" autocomplete="given-name" required />
+                </div>
+                <div>
+                  <label for="last">Last Name</label>
+                  <input id="last" name="last" type="text" autocomplete="family-name" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+                </div>
+              </div>
+              <div>
+                <label for="message">How can we help?</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button class="btn invert" type="submit">Send</button>
+              <div id="form-status" class="status" aria-live="polite"></div>
+            </form>
           </div>
-        </div>
-        <div class="card span-6" style="padding:16px">
-          <h3>Showroom</h3>
-          <p>
-            123 Timber Lane, Springfield, USA<br/>
-            Walk-through models on site.
-          </p>
-          <p><a class="btn outline" href="#shop">Browse sheds</a></p>
+
+          <div class="card">
+            <h3>Reach Us</h3>
+            <p class="muted">Prefer email or phone? Choose what works for you.</p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:contact@jacklinus.com">contact@jacklinus.com</a>
+            </p>
+            <p>
+              <strong>Website:</strong>
+              <a href="https://jacklinus.com/">JackLinus.com</a>
+            </p>
+            <p class="muted">Office details and hours can be added here.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="callbar">
-    <a href="tel:+1-555-0123">📞 Call Mathershed</a>
-  </div>
-
   <footer>
-    <div class="container footer-grid">
-      <div class="foot-col">
-        <div class="brand" style="color:#cde7dc">
-          <div class="logo" aria-hidden="true"></div>
-          <span><strong>Mathershed</strong> Sheds</span>
-        </div>
-        <p class="subtle" style="color:#b9d2c7;margin-top:6px">Premium sheds, built local. Free delivery, fair pricing, and friendly service.</p>
+    <div class="container foot">
+      <small>© <span id="year"></span> Jack &amp; Linus. All rights reserved.</small>
+      <div class="links">
+        <a href="#approach">Disclaimer</a>
+        <a href="#contact">Contact</a>
+        <a href="https://jacklinus.com/">JackLinus.com</a>
       </div>
-      <div class="foot-col">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="inventory/">In‑stock inventory</a></li>
-          <li><a href="#shop">All sheds</a></li>
-          <li><a href="#custom">Custom options</a></li>
-          <li><a href="#faq">FAQs</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+1-555-0123">Call (555) 0123</a></li>
-          <li><a href="mailto:sales@mathershed.com">sales@mathershed.com</a></li>
-          <li>Springfield, USA</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container copyright">
-      © <span id="year">2025</span> Mathershed. All rights reserved.
     </div>
   </footer>
+
+  <!-- Structured Data (update fields as needed) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Jack & Linus",
+    "url": "https://jacklinus.com/"
+  }
+  </script>
+
+  <script>
+    // Mobile nav toggle
+    const btn = document.querySelector('.hamburger');
+    const menu = document.getElementById('menu');
+    btn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    // Close menu on link click (mobile)
+    menu?.addEventListener('click', (e) => {
+      if (e.target.matches('a')) {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Contact form (demo only)
+    const form = document.getElementById('contact-form');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+      status.textContent = "Thank you—your message has been received.";
+      form.reset();
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
